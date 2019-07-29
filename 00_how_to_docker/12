@@ -1,1 +1,1 @@
-docker-machine ssh Char "docker run -d --name spawning-pool --restart on-failure:10 -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings -v hatchery:/var/lib/mysql mysql"
+docker-machine ssh Char "docker run -d --name spawning-pool --network=toto --restart on-failure:10 -e MYSQL_ROOT_PASSWORD=Kerrigan -e MYSQL_DATABASE=zerglings -v hatchery:/var/lib/mysql mysql"

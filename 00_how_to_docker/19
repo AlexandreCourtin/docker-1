@@ -1,0 +1,15 @@
+# put this into a file helloworld.py
+# from flask import Flask
+# app = Flask(__name__)
+#
+# @app.route('/')
+# def helloworld():
+#     return '<h1>Hello World!</h1>'
+#
+#     if __name__ == '__main__':
+#         app.run(host='0.0.0.0', port=3000)
+
+docker run -t -d --name Abathur -p 3000:3000 -v $(PWD):/root python:2-slim
+docker exec Abathur pip install --upgrade pip
+docker exec Abathur pip install flask
+docker exec --env FLASK_APP=/root/helloworld.py Abathur flask run --host=0.0.0.0 --port=3000

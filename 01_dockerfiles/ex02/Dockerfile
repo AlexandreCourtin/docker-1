@@ -1,9 +1,8 @@
-FROM ruby:latest
+FROM ft-rails:on-build
 
-RUN apt-get update
+EXPOSE 3000
 
-RUN apt-get install rails bundler
+CMD [ "rails" , "s", "-b", "0.0.0.0", "-p", "3000"]
 
-WORKDIR /opt/app
-
-COPY . /opt/app
+#docker build -t rizkyario/42-docker-1-ex02 .
+#docker run -it --rm -p 3000:3000 rizkyario/42-docker-1-ex02
